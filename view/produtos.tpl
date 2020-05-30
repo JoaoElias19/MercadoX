@@ -1,13 +1,8 @@
 
+
 {if $PRO_TOTAL < 1}
 <h4 class="alert alert-danger">Nenhum produto encontrada!!</h4>
 {/if}
-
-    <section id="paginacao" class="row">
-        <center>
-           {*PAGINAS*} 
-        </center>
-    </section>
 
 
             <div class="container">
@@ -41,26 +36,20 @@
                         </li>
 
                     {/foreach}
-                    
-
-                <section id="paginacao" class="row">
-                    <center>
-                    1
-                    {*PAGINAS*} 
-                    </center>
-                </section>
-
                 </div>
                 </ul>
             </div>
         </section>
+
+<!-- Os a estilizacao esta em model/Conexao.class.php -->
+        <section id="paginacao" class="row">
+            <center class="">
+                {$PAGINAS} 
+            </center>
+        </section>
     </div>
 </div>
-                    
                     </div>
                 </div>
 
             </div>
-
-
-
