@@ -12,7 +12,9 @@ class Produtos extends Conexao {
                             INNER JOIN {$this->prefix}categorias c ON p.pro_categoria
                             = c.cate_id";
         
-        //$query .= " ORDER BY pro_id DESC";
+        $query .= " ORDER BY pro_id DESC";
+
+        $query .= $this->PaginacaoLinks("pro_id", $this->prefix . "produtos");
 
         $this->ExecuteSQL($query);
 
@@ -40,11 +42,19 @@ class Produtos extends Conexao {
     function GetProdutosCateID($id) {
         /*query para buscar os produtos de uma categoria 
         especifica*/ 
+
+        //Evitar o sql injection
+        $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+
+
         $query = "SELECT * FROM {$this->prefix}produtos p 
                             INNER JOIN {$this->prefix}categorias c ON p.pro_categoria
                             = c.cate_id";
         
         $query .= " AND pro_categoria = :id";
+
+        $query .= $this->PaginacaoLinks("pro_id", $this->prefix . 
+        "produtos WHERE pro_categoria =". (int)$id);
 
         $params = array(':id'=>(int)$id);
 
