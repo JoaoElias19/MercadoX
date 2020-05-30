@@ -6,7 +6,7 @@ class Config {
     const SITE_PASTA = "MercadoX"; // Nome da pasta onde ta todo o projeto
     const SITE_NOME = "Mano Pipas - PHP 7 e Mysqli";
     const SITE_EMAIL_ADM = "joaortd@gmail.com"; // Email do administrador
-    const DB_LIMIT_POR_PAG = 3;
+    const DB_LIMIT_POR_PAG = 6;
 
     //Informacoes do Banco de Dados
     const DB_HOST = "localhost",
