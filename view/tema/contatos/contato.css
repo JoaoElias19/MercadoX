@@ -1,0 +1,10 @@
+div.backForm {
+  background-color: aliceblue;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+form {
+  margin: 30px;
+  padding-left: 10px;
+}
