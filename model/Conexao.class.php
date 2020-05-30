@@ -6,7 +6,7 @@ class Conexao extends Config {
 
     protected $obj, $itens = array(), $prefix;
 
-    public $paginacao_links; 
+    public $paginacao_links, $totalpags, $limite, $inicio; 
 
     function __construct() {
         $this->host = self::DB_HOST;
@@ -68,6 +68,52 @@ class Conexao extends Config {
     function GetItens() {
         return $this->itens;
     }
+
+
+    function PaginacaoLinks($campo, $tabela) {
+        $pag = new Paginacao();
+        $pag->GetPaginacao($campo, $tabela);
+        $this->paginacao_links = $pag->link;
+
+        $this->totalpags = $pag->totalpags;
+        $this->limite = $pag->limite;
+        $this->inicio = $pag->inicio;
+
+        $inicio = $pag->inicio;
+        $limite = $pag->limite;
+
+        if($this->totalpags > 0) {
+            return " limit {$inicio}, {$limite}";
+        } else {
+            return " ";
+        }
+
+    }
+
+    // Aqui esta a estilizacao dos botoes de paginacao
+    protected function Paginacao($paginas = array()) {
+        $pag = '<ul class="pagination">';
+        $pag .= '<li class="page-item"><a class="page-link" href="?p=1"> << Inicio</a></li>';
+
+        foreach($paginas as $p):
+            $pag .= '<li><a class="page-link" href="?p='.$p.'">'.$p.'</a></li>';
+        endforeach;
+
+        $pag .= '<li class="page-item">
+                    <a class="page-link" href="?p=' . $this->totalpags .'"> ...'. $this->totalpags .'>> </a>
+                </li>';
+
+        $pag .= '</ul>';
+
+        if($this->totalpags > 1) {
+            return $pag;
+        }
+    }
+
+    function ShowPaginacao() {
+        return $this->Paginacao($this->paginacao_links);
+    }
+
 }
 
 ?>
