@@ -85,15 +85,18 @@
             </div>
             <div class="product-payment-details">
 
-              <p class="last-sold text-muted"><small>{$P.pro_peso}</small></p>
-              <h4 class="product-title mb-2">{$P.pro_nome} - Ref: {$P.pro_ref}</h4>
-              <h2 class="product-price display-4">R$ {$P.pro_valor}</h2>
-              <p class="text-success"><i class="fa fa-credit-card"></i> 12x or  5x $ 5.00</p>
-              <p class="mb-0"><i class="fa fa-truck"></i> Entrega para todo o territorio</p>
-              <div class="text-muted mb-2"><small>saiba mais sobre entrega e formas de envio</small></div>
-              <label for="quant">Quantidade</label>
-              <input type="number" name="quantity" min="1" id="quant" class="form-control mb-5 input-lg" placeholder="Choose the quantity">
-              <button class="btn btn-primary btn-lg btn-block">Comprar</button>
+              <!-- E necessario ter esse form aqui porque tem o metodo post -->
+                <form name="carrinho" method="post" action="{$PAG_COMPRAR}">
+                  <h4 class="product-title mb-2">{$P.pro_nome} - Ref: {$P.pro_ref}</h4>
+                  <h2 class="product-price display-4">R$ {$P.pro_valor}</h2>
+                  <p class="text-success"><i class="fa fa-credit-card"></i> 12x or  5x $ 5.00</p>
+                  <p class="mb-0"><i class="fa fa-truck"></i> Entrega para todo o territorio</p>
+                  <div class="text-muted mb-2"><small>saiba mais sobre entrega e formas de envio</small></div>
+
+                  <input type="hidden" name="pro_id" value="{$P.pro_id}">
+                  <input type="hidden" name="acao" value="add">
+                  <button class="btn btn-primary btn-lg btn-block">Comprar</button>
+                </form>
               
             </div>
           </div>
