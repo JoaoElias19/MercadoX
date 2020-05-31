@@ -1,5 +1,10 @@
 <?php
 
+//Verificacao a existencia de uma sessao
+if(!isset($_SESSION)) {
+    session_start();
+}
+
 //Orientacao a Objetos com PHP
 
 require './lib/autoload.php';
