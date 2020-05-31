@@ -23,6 +23,10 @@ class Rotas { // Criando URLs amigaveis
         return self::get_SiteHOME() . '/carrinho';
     }
 
+    static function pag_CarrinhoAlterar() { // Pagina do Carrinho de compras
+        return self::get_SiteHOME() . '/carrinho_alterar';
+    }
+
     static function pag_Produtos() { // Pagina do Carrinho de compras
         return self::get_SiteHOME() . '/produtos';
     }
@@ -37,6 +41,14 @@ class Rotas { // Criando URLs amigaveis
 
     static function pag_MinhaConta() { // Pagina da Conta do Usuario
         return self::get_SiteHOME() . '/minhaconta';
+    }
+
+    static function pag_PedidoConfirmar() { // Pagina da Conta do Usuario
+        return self::get_SiteHOME() . '/pedido_confirmar';
+    }
+
+    static function pag_PedidoFinalizar() { // Pagina da Conta do Usuario
+        return self::get_SiteHOME() . '/pedido_finalizar';
     }
 
     static function get_ImagePasta() {
@@ -55,6 +67,13 @@ class Rotas { // Criando URLs amigaveis
 
     static function get_Pasta_Controller() {
         return self::$pasta_controller;
+    }
+	
+	
+	//METODO PARA REDIRECIONAR para o Carrinho
+	static function Redirecionar($tempo, $pagina) {
+        $url = '<meta http-equiv="refresh" content="'.$tempo.'; url='. $pagina .'">';
+		echo $url;
     }
 
 
