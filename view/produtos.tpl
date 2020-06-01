@@ -42,10 +42,10 @@
         </section>
 
 <!-- Os a estilizacao esta em model/Conexao.class.php -->
-        <section id="paginacao" class="row">
-            <center class="">
+        <section id="paginacao" class="row justify-content-md-center">
+            <div class="">
                 {$PAGINAS} 
-            </center>
+            </div>
         </section>
     </div>
 </div>
