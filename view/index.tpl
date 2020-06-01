@@ -48,7 +48,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Mano Pipas</a>
+      <a class="navbar-brand" href="{$GET_SITE_HOME}">Mano Pipas</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -96,7 +96,7 @@
       </div>
 
 
-     <div class="pt-1">
+     <div class="pt-1 bg-light">
       <div class="container">
         <div class="card-body">
           <h2 class="text-dark text-center">Conheça o que temos disponível.</h2>
@@ -105,12 +105,10 @@
      </div>
 
 <div class="container-fluid">
+    
     <div class="row">
-
-        <div class="col-md-1"> </div>
-
-        <div class="col-md-2"> 
-            <nav class="nav nav-pills flex-column">
+  <div class="col-3 col-md-3">
+      <nav class="nav nav-pills flex-column">
                 <a href="#" class="nav-item nav-link active">
                     <i class="fa fa-list"></i> Categorias
                 </a>
@@ -133,18 +131,14 @@
 
 
             </nav>
-        </div>
-
-        {php}
+  </div>
+  <div class="col-9">
+    {php}
             Rotas::get_Pagina();
         {/php}
-
-    </div>
+  </div>
 </div>
-
-
-
-    <p></p>      
+            
 
     <section class="lista p-1 mb-1 bg-light text-dark">
 
@@ -177,29 +171,11 @@
       <!-- Grid column -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Mano Pipas</h6>
-        <p>Loja Virtual de Pipas em Manaus, fundada por João Elias e Derlane Oliveira.</p>
+        <p>Loja Virtual de Pipas em Manaus, as melhores pipas ao seu alcance.</p>
       </div>
       <!-- Grid column -->
 
       <hr class="w-100 clearfix d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
-      </div>
-      <!-- Grid column -->
 
       <hr class="w-100 clearfix d-md-none">
 
@@ -227,7 +203,7 @@
       <div class="col-md-4 col-lg-3 col-xl-4 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contatos</h6>
         <p>
-          <i class="fa fa-home mr-3"></i> Rua 157 17-A, Santo Antônio, Manaus-AM</p>
+          <i class="fa fa-home mr-3"></i> Rua 157 17-A, Sto. Antônio, MAO</p>
         <p>
           <i class="fa fa-envelope mr-3"></i> manotecnico.am@gmail.com</p>
         <p>
@@ -251,7 +227,7 @@
         <!--Copyright-->
         <p class="text-center text-md-left">© 2020 Copyright:
           <a href="#">
-            <strong> ManoTecnico.com.br</strong>
+            <strong>JWeb.Desenvolvimento</strong>
           </a>
         </p>
 
